@@ -121,13 +121,14 @@ class GlobalController extends GetxController {
   Future<void> fetchLatestVitalData() async {
     var response = await _restAPI.get("/patient/vitals/fetch/latest", {},);
     if (response.success) {
-      latestVitals = (response.payload as Map).map((key, value) =>
-          MapEntry(key, VitalData.fromJson(value)));
+      latestVitals = (response.payload as Map).map((key, value) => MapEntry(key, VitalData.fromJson(value)));
+      print(latestVitals);
       update();
     } else {
       Get.snackbar("Failed to resolve detection history", "Restart app",
           backgroundColor: Colors.redAccent.shade400);
     }
+    print(latestVitals);
   }
 
   String getVitalValue(String vitalCode) {
