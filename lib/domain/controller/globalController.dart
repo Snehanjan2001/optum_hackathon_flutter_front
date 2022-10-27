@@ -122,13 +122,11 @@ class GlobalController extends GetxController {
     var response = await _restAPI.get("/patient/vitals/fetch/latest", {},);
     if (response.success) {
       latestVitals = (response.payload as Map).map((key, value) => MapEntry(key, VitalData.fromJson(value)));
-      print(latestVitals);
       update();
     } else {
       Get.snackbar("Failed to resolve detection history", "Restart app",
           backgroundColor: Colors.redAccent.shade400);
     }
-    print(latestVitals);
   }
 
   String getVitalValue(String vitalCode) {
@@ -385,6 +383,23 @@ class GlobalController extends GetxController {
       Get.snackbar("Failed to send SOS", "Retry", backgroundColor: Colors.redAccent.shade400);
     }
     sendingSOS.value = false;
+  }
+
+  Future<Map<String, dynamic>> linkDevice(String hardwareId)async{
+    var response = await _restAPI.post("/patient/manage/device/link", {}, {
+      "hardwareId" : hardwareId
+    });
+    if(response.success){
+      return {
+        "success" : true,
+        "message" : response.message
+      };
+    }else{
+      return {
+        "success" : false,
+        "message" : response.message.isNotEmpty ? response.message : "Failed to link device"
+      };
+    }
   }
 
   Future<void> logout()async{
