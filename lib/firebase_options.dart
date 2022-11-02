@@ -54,7 +54,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCGUS1lb_9ZmHqSVokdMm2t6htvLzxzOjo',
-    appId: '1:744642209859:android:dbffcaf9258b96155c0cf6',
+    appId: '1:744642209859:android:bd4666cf369955ee5c0cf6',
     messagingSenderId: '744642209859',
     projectId: 'optum-monitoring-app',
     storageBucket: 'optum-monitoring-app.appspot.com',

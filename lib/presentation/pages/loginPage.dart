@@ -25,7 +25,7 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     //Appname and logo to be inserted
-                    SvgPicture.asset("assets/images/logo.svg"),
+                    SvgPicture.asset("assets/images/logo.svg", width: MediaQuery.of(context).size.width*0.5,),
                     const SizedBox(
                       height: 40,
                     ),

@@ -19,7 +19,7 @@ class SplashPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SvgPicture.asset("assets/images/logo.svg"),
+            SvgPicture.asset("assets/images/logo.svg",  width: MediaQuery.of(context).size.width*0.5,),
             const SizedBox(
               height: 80,
             ),

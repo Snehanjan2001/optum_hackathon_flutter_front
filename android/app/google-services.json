@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:744642209859:android:dbffcaf9258b96155c0cf6",
+        "mobilesdk_app_id": "1:744642209859:android:bd4666cf369955ee5c0cf6",
         "android_client_info": {
-          "package_name": "com.crazydev.patient"
+          "package_name": "com.mefit.patient"
         }
       },
       "oauth_client": [

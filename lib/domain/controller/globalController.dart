@@ -404,6 +404,7 @@ class GlobalController extends GetxController {
 
   Future<void> logout()async{
     await _prefs.clear();
-    await Get.offAll(() => const SplashPage());
+    Get.deleteAll(force: true);
+    await Get.to(() => const SplashPage());
   }
 }
